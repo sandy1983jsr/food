@@ -7,7 +7,6 @@ import numpy as np
 def show_ai_recommendations():
     st.header("🤖 AI Recommendations")
     st.write("AI-driven suggestions for energy savings and operational improvements.")
-    # Example: Linear regression to predict energy use and recommend actions
     for fname in glob.glob("data/sample/*.csv"):
         df = pd.read_csv(fname)
         if "Energy_kWh" in df.columns and "Timestamp" in df.columns:

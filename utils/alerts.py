@@ -4,8 +4,7 @@ import glob
 
 def show_alerts():
     st.header("🔔 Alerts & Notifications")
-    st.write("Automated detection of abnormal energy consumption and operational anomalies.")
-    # Scan sample data for alerts
+    st.write("Detection of abnormal energy consumption and operational anomalies.")
     alert_msgs = []
     for fname in glob.glob("data/sample/*.csv"):
         df = pd.read_csv(fname)

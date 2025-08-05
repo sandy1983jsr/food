@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from utils.data_loader import load_csv
 
 def cip_tab():
@@ -9,13 +8,11 @@ def cip_tab():
         df = load_csv(uploaded_file)
     else:
         df = load_csv("data/sample/cip_sample.csv")
-    
     st.subheader("Raw Data")
     st.dataframe(df)
     st.metric("Total Water Used (L)", df["Water_L"].sum())
     st.metric("Total Energy Used (kWh)", df["Energy_kWh"].sum())
     st.bar_chart(df[["Timestamp", "Energy_kWh"]].set_index("Timestamp"))
-    
     st.subheader("What-if: Insulation Upgrade")
     insulation = st.selectbox("Insulation Quality", ["Standard", "Upgraded"])
     if insulation == "Upgraded":

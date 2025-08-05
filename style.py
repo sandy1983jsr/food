@@ -21,5 +21,9 @@ def set_custom_style():
             background-color: #f26a21;
             color: white;
         }
+        .stMetric {
+            background-color: #eeeeee;
+            color: #f26a21;
+        }
         </style>
     """, unsafe_allow_html=True)
